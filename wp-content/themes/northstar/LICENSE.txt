@@ -1,0 +1,4 @@
+This theme is distributed under the GNU General Public License, version 2 or (at your option) any later version.
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+The original Northstar prototype assets were supplied by the user in the uploaded archive. Verify the original asset licensing before distributing this theme publicly.

@@ -1,0 +1,4 @@
+2026-10-29T07:29:40+00:00 WARNING Failed to initialise WC_Filesystem API while trying to update the MaxMind Geolocation database.
+2026-10-29T10:46:53+00:00 INFO Payment gateway enabled: "Cash on delivery"
+2026-10-29T13:21:12+00:00 INFO Payment gateway enabled: "PayPal"
+2026-10-29T13:21:12+00:00 INFO Payment gateway enabled: "Standard Card Button"
