@@ -18,6 +18,8 @@ require_once NORTHSTAR_DIR . '/inc/theme-options.php';
 require_once NORTHSTAR_DIR . '/inc/meta-boxes/shop-page.php';
 require_once NORTHSTAR_DIR . '/inc/meta-boxes/product-meta.php';
 require_once NORTHSTAR_DIR . '/inc/meta-boxes/homepage-hero.php';
+require_once NORTHSTAR_DIR . '/inc/woocommerce/reviews-rating.php';
+require_once NORTHSTAR_DIR . '/inc/woocommerce/single-product.php';
 require_once NORTHSTAR_DIR . '/inc/woocommerce/product-filters.php';
 require_once NORTHSTAR_DIR . '/inc/woocommerce/product-card.php';
 require_once NORTHSTAR_DIR . '/inc/woocommerce/setup.php';

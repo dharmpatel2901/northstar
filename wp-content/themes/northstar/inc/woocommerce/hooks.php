@@ -9,20 +9,39 @@
 
 defined( 'ABSPATH' ) || exit;
 
-add_action( 'wp', 'northstar_customize_woocommerce_layout' );
+/**
+ * Remove the default WooCommerce content wrappers.
+ *
+ * This template provides its own main container.
+ */
+remove_action(
+	'woocommerce_before_main_content',
+	'woocommerce_output_content_wrapper',
+	10
+);
+
+remove_action(
+	'woocommerce_after_main_content',
+	'woocommerce_output_content_wrapper_end',
+	10
+);
 
 /**
- * Apply small WooCommerce layout adjustments.
- *
- * @return void
+ * Remove the default WooCommerce breadcrumb.
  */
-function northstar_customize_woocommerce_layout() {
-	if ( ! class_exists( 'WooCommerce' ) ) {
-		return;
-	}
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 
-	if ( is_shop() || is_product_taxonomy() ) {
-		// Remove default wrappers only when a matching replacement is added.
-		// Keep WooCommerce's standard loop and product-card output for compatibility.
-	}
+/**
+ * Display custom WooCommerce breadcrumb.
+ */
+function northstar_woocommerce_breadcrumb() {
+    if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+        woocommerce_breadcrumb(
+            array(
+                'wrap_before' => '<nav class="breadcrumb" aria-label="' . esc_attr__( 'Breadcrumb', 'northstar' ) . '">',
+                'wrap_after'  => '</nav>',
+            )
+        );
+    }
 }
+add_action( 'woocommerce_before_main_content', 'northstar_woocommerce_breadcrumb', 20 );

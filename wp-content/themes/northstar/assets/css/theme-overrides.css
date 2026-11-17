@@ -117,8 +117,8 @@
 
 .rating-stars .star svg {
     display: block;
-    width: 16px;
-    height: 16px;
+    width: 10px;
+    height: 10px;
 }
 
 /* Default wishlist heart */
@@ -263,4 +263,226 @@
 
 .woocommerce-pagination {
 	margin: 50px 0 0 0;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wp-theme-northstar .woocommerce-product-gallery.woocommerce-product-gallery--with-images.woocommerce-product-gallery--columns-4.images {
+width: 100%;
+}
+
+.wp-theme-northstar.woocommerce-page div.product div.summary.entry-summary {
+    width: 100%;
+    background: none;
+    border-radius: none;
+}
+
+/* Main product gallery image height */
+.wp-theme-northstar.single-product .gallery-main .woocommerce-product-gallery__image {
+    height: 520px !important;
+    overflow: hidden;
+    border-radius: 22px;
+}
+
+/* Main product image */
+.wp-theme-northstar.single-product .gallery-main .woocommerce-product-gallery__image img.wp-post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.wp-theme-northstar div.product .stock{
+    color: #1e654b;
+}
+
+.wp-theme-northstar div.product .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    border: 0;
+    border-radius: 100px;
+    background: var(--green);
+    color: white;
+    padding: 14px 22px;
+    font-weight: 750;
+    font-size: 13px;
+    transition: .2s;
+}
+
+.wp-theme-northstar div.product button.button.alt:disabled.btn:disabled{
+    background-color: var(--green);
+}
+
+.wp-theme-northstar div.product .btn:hover{
+    background: var(--green2);
+}
+
+.wp-theme-northstar div.product form.cart{
+    margin: 0;
+}
+
+/* Review Modal Overlay */
+.review-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.review-modal[hidden] {
+    display: none;
+}
+
+/* Modal Content */
+.review-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.review-modal-content h2 {
+    margin: 0 0 25px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #222;
+}
+
+/* Close Button */
+.review-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #f3f3f3;
+    color: #222;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.review-modal-close:hover {
+    background: #e5e5e5;
+}
+
+/* Review Form */
+.review-modal-content .comment-respond {
+    margin: 0;
+}
+
+.review-modal-content .comment-reply-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.review-modal-content .comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.review-modal-content .comment-form label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.review-modal-content .comment-form input:not([type="checkbox"]):not([type="submit"]),
+.review-modal-content .comment-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.review-modal-content .comment-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Star Rating */
+.review-modal-content .comment-form-rating {
+    margin: 0;
+}
+
+.review-modal-content .stars a {
+    color: #e0a800;
+    font-size: 22px;
+}
+
+/* Submit Button */
+.review-modal-content .form-submit input[type="submit"] {
+    padding: 13px 28px;
+    border: 0;
+    border-radius: 6px;
+    background: #222;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.review-modal-content .form-submit input[type="submit"]:hover {
+    background: #444;
+}
+
+/* Prevent background scrolling */
+body.review-modal-open {
+    overflow: hidden;
+}
+
+.wp-theme-northstar div.product .btn.give-review {
+    padding: 5px 10px;
+    font-weight: 400;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .review-modal {
+        padding: 12px;
+    }
+
+    .review-modal-content {
+        padding: 30px 20px;
+        max-height: 90vh;
+    }
+
+    .review-modal-content h2 {
+        font-size: 23px;
+    }
+}
+
+
+.wp-theme-northstar.woocommerce span.onsale{
+    right: -0.5em;
+    left: 90%;
+}
+
+.trust-row img{
+    max-width: 10px;
 }
