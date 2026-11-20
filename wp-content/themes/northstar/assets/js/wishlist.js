@@ -4,6 +4,9 @@
 
     const wishlistKey = 'northstar_wishlist';
 
+    let wishlistReady = false;
+    let wishlistQueue = Promise.resolve();
+
     /**
      * Get saved wishlist products.
      *
@@ -11,12 +14,26 @@
      */
     function getWishlist() {
         try {
-            const saved = JSON.parse(localStorage.getItem(wishlistKey) || '[]');
+            const saved = JSON.parse(
+                localStorage.getItem(wishlistKey) || '[]'
+            );
 
             return Array.isArray(saved) ? saved.map(String) : [];
         } catch (error) {
             return [];
         }
+    }
+
+    /**
+     * Save wishlist to localStorage.
+     *
+     * @param {Array} wishlist Product IDs.
+     */
+    function saveWishlist(wishlist) {
+        localStorage.setItem(
+            wishlistKey,
+            JSON.stringify(wishlist)
+        );
     }
 
     /**
@@ -27,7 +44,12 @@
      */
     function updateButton(button, isSaved) {
         button.classList.toggle('is-saved', isSaved);
-        button.setAttribute('aria-pressed', isSaved ? 'true' : 'false');
+
+        button.setAttribute(
+            'aria-pressed',
+            isSaved ? 'true' : 'false'
+        );
+
         button.setAttribute(
             'aria-label',
             isSaved ? 'Remove from wishlist' : 'Add to wishlist'
@@ -47,6 +69,7 @@
             toast.className = 'wishlist-toast';
             toast.setAttribute('role', 'status');
             toast.setAttribute('aria-live', 'polite');
+
             document.body.appendChild(toast);
         }
 
@@ -61,27 +84,154 @@
     }
 
     /**
-     * Initialise wishlist buttons.
+     * Send wishlist data to WordPress.
      *
-     * @return {void}
+     * @param {string} action AJAX action.
+     * @param {Array} wishlist Product IDs.
+     * @return {Promise}
      */
-    function initialiseWishlist() {
-        const wishlist = getWishlist();
+    function sendWishlistRequest(action, wishlist) {
+        const formData = new FormData();
 
-        document.querySelectorAll('[data-wishlist-button]').forEach(function (button) {
-            const productId = String(button.dataset.productId);
+        formData.append('action', action);
+        formData.append('nonce', northstarWishlist.nonce);
 
-            updateButton(button, wishlist.includes(productId));
+        wishlist.forEach(function (productId) {
+            formData.append('wishlist[]', productId);
         });
+
+        return fetch(northstarWishlist.ajaxUrl, {
+            method: 'POST',
+            credentials: 'same-origin',
+            body: formData
+        }).then(function (response) {
+            return response.json();
+        }).then(function (response) {
+            if (!response.success) {
+                throw new Error('Wishlist synchronisation failed.');
+            }
+
+            return response.data.wishlist.map(String);
+        });
+    }
+
+    /**
+     * Synchronise guest wishlist with account wishlist.
+     *
+     * @return {Promise}
+     */
+    function synchroniseWishlist() {
+        const guestWishlist = getWishlist();
+
+        return sendWishlistRequest(
+            'northstar_sync_wishlist',
+            guestWishlist
+        ).then(function (wishlist) {
+            saveWishlist(wishlist);
+
+            return wishlist;
+        });
+    }
+
+    /**
+     * Save updated wishlist to logged-in account.
+     *
+     * @param {Array} wishlist Product IDs.
+     * @return {Promise}
+     */
+    function updateAccountWishlist(wishlist) {
+        return sendWishlistRequest(
+            'northstar_update_wishlist',
+            wishlist
+        );
+    }
+
+    function initialiseWishlist() {
+
+        let wishlist = getWishlist();
+
+        if (northstarWishlist.loggedIn) {
+
+            // Fetch the account wishlist from WordPress.
+            return sendWishlistRequest(
+                'northstar_get_wishlist',
+                []
+            )
+                .then(function (savedWishlist) {
+                    wishlist = savedWishlist;
+
+                    // Keep localStorage in sync.
+                    saveWishlist(wishlist);
+                })
+                .catch(function (error) {
+                    console.error(error);
+
+                    showWishlistMessage(
+                        'Unable to load account wishlist.'
+                    );
+                })
+                .finally(function () {
+                    wishlistReady = true;
+                    updateAllButtons(wishlist);
+                });
+        }
+
+        wishlistReady = true;
+        updateAllButtons(wishlist);
+
+        return Promise.resolve();
+    }
+
+    /**
+     * Update all wishlist buttons.
+     *
+     * @param {Array} wishlist Product IDs.
+     */
+    function updateAllButtons(wishlist) {
+        document.querySelectorAll('[data-wishlist-button]').forEach(
+            function (button) {
+                const productId = String(button.dataset.productId);
+
+                updateButton(
+                    button,
+                    wishlist.includes(productId)
+                );
+            }
+        );
+    }
+
+    /**
+     * Queue account updates to preserve click order.
+     *
+     * @param {Array} wishlist Product IDs.
+     */
+    function queueAccountUpdate(wishlist) {
+
+        if (!northstarWishlist.loggedIn) {
+            return;
+        }
+
+        wishlistQueue = wishlistQueue
+            .then(function () {
+                return updateAccountWishlist(wishlist);
+            })
+            .catch(function (error) {
+                console.error(error);
+
+                showWishlistMessage(
+                    'Wishlist could not be saved to your account.'
+                );
+            });
     }
 
     /**
      * Handle wishlist button clicks.
      */
     document.addEventListener('click', function (event) {
+
         const button = event.target.closest('[data-wishlist-button]');
 
-        if (!button) {
+        if (!button || !wishlistReady) {
             return;
         }
 
@@ -96,22 +246,29 @@
         let wishlist = getWishlist();
 
         if (wishlist.includes(productId)) {
+
             wishlist = wishlist.filter(function (id) {
                 return id !== productId;
             });
 
-            updateButton(button, false);
             showWishlistMessage('Removed from wishlist');
+
         } else {
+
             wishlist.push(productId);
 
-            updateButton(button, true);
             showWishlistMessage('Added to wishlist');
         }
 
-        localStorage.setItem(wishlistKey, JSON.stringify(wishlist));
+        saveWishlist(wishlist);
+
+        updateAllButtons(wishlist);
+
+        // Update WordPress account if logged in.
+        queueAccountUpdate(wishlist);
     });
 
+    // Start wishlist initialisation.
     initialiseWishlist();
 
 })();

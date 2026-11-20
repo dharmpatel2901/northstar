@@ -77,6 +77,17 @@ function northstar_enqueue_assets() {
         true
     );
 
+    wp_localize_script(
+        'northstar-wishlist',
+        'northstarWishlist',
+        array(
+            'ajaxUrl'  => admin_url( 'admin-ajax.php' ),
+            'nonce'    => wp_create_nonce( 'northstar_wishlist_nonce' ),
+            'loggedIn' => is_user_logged_in(),
+            'wishlist' => northstar_get_wishlist(),
+        )
+    );
+
     // Product filters.
     wp_enqueue_script(
         'northstar-product-filters',

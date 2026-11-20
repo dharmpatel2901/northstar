@@ -61,7 +61,7 @@ function northstar_render_product_card($product)
 
                 <?php if (wc_review_ratings_enabled()): ?>
 
-                    <?php northstar_single_product_rating(); ?>
+                    <?php northstar_single_product_rating($product); ?>
 
                 <?php endif; ?>
 

@@ -1,0 +1,442 @@
+2026-11-18T11:13:06+00:00 DEBUG #2207 - [New Request] GET /wordpress/wp-admin/admin.php @ 11:13:05.497
+2026-11-18T11:13:06+00:00 DEBUG #2207 - GET https://api.woocommerce.com/integrations/ppc/v1/customer/partners/K8SKZ36LQBWXJ/merchant-integrations/
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+2026-11-18T11:13:06+00:00 WARNING #2207 - [Error] Not Found CONTEXT: {"args":{"method":"GET","headers":{"Authorization":"Bearer token","Content-Type":"application/json"}},"response":{"headers":{},"body":"{\"statusCode\":404,\"error\":\"Not Found\",\"message\":\"Not Found\"}","response":{"code":404,"message":"Not Found"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}}
+2026-11-18T11:13:07+00:00 DEBUG #3970.REST - [New Request] GET /wordpress/wp-json/wc/v3/wc_paypal/webhooks @ 11:13:06.866
+2026-11-18T11:13:07+00:00 DEBUG #3970.REST - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+2026-11-18T11:13:13+00:00 DEBUG #2751.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:13:12.986
+2026-11-18T11:13:13+00:00 INFO #2751.REST - Generating onboarding URL for: production-express_checkout-
+2026-11-18T11:13:14+00:00 DEBUG #2751.REST - POST https://api.woocommerce.com/integrations/ppc/v2/customer/partner-referrals
+Request Body: {"partner_config_override":{"return_url":"http:\/\/localhost\/wordpress\/wp-admin\/admin.php?page=wc-settings&tab=checkout&section=ppcp-gateway&ppcpToken=eyJrIjoicHJvZHVjdGlvbi1leHByZXNzX2NoZWNrb3V0LSIsInUiOjEsImgiOiI5MGViNDlhNjY2ZTQ5MjdjNDk5OTM2MGRkMDJjMTE5YiJ9","return_url_description":"Return to your shop.","show_add_credit_card":false},"products":["EXPRESS_CHECKOUT"],"legal_consents":[{"type":"SHARE_DATA_CONSENT","granted":true}],"operations":[{"operation":"API_INTEGRATION","api_integration_preference":{"rest_api_integration":{"integration_method":"PAYPAL","integration_type":"FIRST_PARTY","first_party_details":{"features":["PAYMENT","REFUND","ADVANCED_TRANSACTIONS_SEARCH","TRACKING_SHIPMENT_READWRITE","BILLING_AGREEMENT"],"seller_nonce":"5c54b6144be7cb6892fdb5476b11aa189837e397ea14e6a0f5b3ad01ce1c25d3"}}}}]}
+Response Debug ID: ead531fca29ab
+Response: Array
+(
+    [code] => 201
+    [message] => Created
+)
+
+2026-11-18T11:13:15+00:00 DEBUG #8977.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:13:15.224
+2026-11-18T11:13:15+00:00 DEBUG #1639.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:13:15.226
+2026-11-18T11:13:15+00:00 DEBUG #8977.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:13:15+00:00 DEBUG #1639.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:13:15+00:00 INFO #8977.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:13:15+00:00 INFO #1639.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:13:36+00:00 DEBUG #5405.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:13:36.017
+2026-11-18T11:13:36+00:00 DEBUG #8404.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:13:36.018
+2026-11-18T11:13:36+00:00 DEBUG #5405.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:13:36+00:00 INFO #5405.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:13:36+00:00 DEBUG #8404.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:13:36+00:00 INFO #8404.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:13:41+00:00 DEBUG #3203.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:13:41.001
+2026-11-18T11:13:41+00:00 DEBUG #3203.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:13:41+00:00 INFO #3203.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:13:41+00:00 DEBUG #1135.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:13:41.010
+2026-11-18T11:13:41+00:00 DEBUG #1135.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:13:41+00:00 INFO #1135.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:14:44+00:00 DEBUG #9392.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:14:44.325
+2026-11-18T11:14:44+00:00 DEBUG #9392.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:14:44+00:00 INFO #9392.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:14:45+00:00 DEBUG #7866.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:14:45.916
+2026-11-18T11:14:45+00:00 DEBUG #7866.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:14:45+00:00 INFO #7866.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:14:54+00:00 DEBUG #9105.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:14:54.639
+2026-11-18T11:14:54+00:00 DEBUG #9105.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:14:54+00:00 INFO #9105.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:14:56+00:00 DEBUG #6348.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/authenticate/direct @ 11:14:56.004
+2026-11-18T11:14:56+00:00 INFO #6348.REST - Attempting manual connection to PayPal... CONTEXT: {"sandbox":false,"client_id":"BAA3y8bfVofuMl3G2vFcJ-9EFosgI9W7VqFL_PFqvQat4fu2VHbrZzc1ZWooQKHL49Naiuv0eW-Yb5mDFY"}
+2026-11-18T11:14:56+00:00 DEBUG #6348.REST - POST https://api-m.paypal.com/v1/oauth2/token?grant_type=client_credentials
+Response Debug ID: 8f8ee02c58a0b
+Response: Array
+(
+    [code] => 200
+    [message] => OK
+)
+
+2026-11-18T11:14:57+00:00 DEBUG #6348.REST - POST https://api-m.paypal.com/v2/checkout/orders
+Request Body: {"intent":"CAPTURE","purchase_units":[{"amount":{"currency_code":"USD","value":1}}]}
+Response Debug ID: aeb4cb5d4db6b
+Response: Array
+(
+    [code] => 422
+    [message] => Unprocessable Entity
+)
+
+Response Body: {"name":"UNPROCESSABLE_ENTITY","details":[{"field":"/purchase_units/@reference_id=='default'/payee","location":"body","issue":"PAYEE_ACCOUNT_RESTRICTED","description":"The merchant account is restricted."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"aeb4cb5d4db6b","links":[{"href":"https://developer.paypal.com/api/rest/reference/orders/v2/errors/#PAYEE_ACCOUNT_RESTRICTED","rel":"information_link","method":"GET"}]}
+2026-11-18T11:14:57+00:00 ERROR #6348.REST - Direct API authentication failed: Failed to retrieve payee details.
+2026-11-18T11:14:59+00:00 DEBUG #1599.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/authenticate/direct @ 11:14:59.451
+2026-11-18T11:14:59+00:00 INFO #1599.REST - Attempting manual connection to PayPal... CONTEXT: {"sandbox":false,"client_id":"BAA3y8bfVofuMl3G2vFcJ-9EFosgI9W7VqFL_PFqvQat4fu2VHbrZzc1ZWooQKHL49Naiuv0eW-Yb5mDFY"}
+2026-11-18T11:15:00+00:00 DEBUG #1599.REST - POST https://api-m.paypal.com/v1/oauth2/token?grant_type=client_credentials
+Response Debug ID: 510abf5787088
+Response: Array
+(
+    [code] => 200
+    [message] => OK
+)
+
+2026-11-18T11:15:00+00:00 DEBUG #1599.REST - POST https://api-m.paypal.com/v2/checkout/orders
+Request Body: {"intent":"CAPTURE","purchase_units":[{"amount":{"currency_code":"USD","value":1}}]}
+Response Debug ID: fd9c4c6a43b57
+Response: Array
+(
+    [code] => 422
+    [message] => Unprocessable Entity
+)
+
+Response Body: {"name":"UNPROCESSABLE_ENTITY","details":[{"field":"/purchase_units/@reference_id=='default'/payee","location":"body","issue":"PAYEE_ACCOUNT_RESTRICTED","description":"The merchant account is restricted."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"fd9c4c6a43b57","links":[{"href":"https://developer.paypal.com/api/rest/reference/orders/v2/errors/#PAYEE_ACCOUNT_RESTRICTED","rel":"information_link","method":"GET"}]}
+2026-11-18T11:15:00+00:00 ERROR #1599.REST - Direct API authentication failed: Failed to retrieve payee details.
+2026-11-18T11:15:02+00:00 DEBUG #6995.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:15:02.326
+2026-11-18T11:15:02+00:00 DEBUG #4338.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:15:02.326
+2026-11-18T11:15:02+00:00 DEBUG #6995.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:15:02+00:00 DEBUG #4338.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:15:02+00:00 INFO #6995.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:15:02+00:00 INFO #4338.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:15:34+00:00 DEBUG #7155.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:15:34.300
+2026-11-18T11:15:34+00:00 DEBUG #7155.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:15:34+00:00 INFO #7155.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:15:44+00:00 DEBUG #6909.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:15:44.388
+2026-11-18T11:15:44+00:00 DEBUG #6909.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:15:44+00:00 INFO #6909.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:15:45+00:00 DEBUG #1844.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/authenticate/direct @ 11:15:45.203
+2026-11-18T11:15:45+00:00 INFO #1844.REST - Attempting manual connection to PayPal... CONTEXT: {"sandbox":false,"client_id":"BAA3y8bfVofuMl3G2vFcJ-9EFosgI9W7VqFL_PFqvQat4fu2VHbrZzc1ZWooQKHL49Naiuv0eW-Yb5mDFY"}
+2026-11-18T11:15:46+00:00 DEBUG #1844.REST - POST https://api-m.paypal.com/v1/oauth2/token?grant_type=client_credentials
+Response Debug ID: d6287d76fbe7d
+Response: Array
+(
+    [code] => 200
+    [message] => OK
+)
+
+2026-11-18T11:15:46+00:00 DEBUG #1844.REST - POST https://api-m.paypal.com/v2/checkout/orders
+Request Body: {"intent":"CAPTURE","purchase_units":[{"amount":{"currency_code":"USD","value":1}}]}
+Response Debug ID: b2d1489abdfe9
+Response: Array
+(
+    [code] => 422
+    [message] => Unprocessable Entity
+)
+
+Response Body: {"name":"UNPROCESSABLE_ENTITY","details":[{"field":"/purchase_units/@reference_id=='default'/payee","location":"body","issue":"PAYEE_ACCOUNT_RESTRICTED","description":"The merchant account is restricted."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"b2d1489abdfe9","links":[{"href":"https://developer.paypal.com/api/rest/reference/orders/v2/errors/#PAYEE_ACCOUNT_RESTRICTED","rel":"information_link","method":"GET"}]}
+2026-11-18T11:15:46+00:00 ERROR #1844.REST - Direct API authentication failed: Failed to retrieve payee details.
+2026-11-18T11:15:49+00:00 DEBUG #4038.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/authenticate/direct @ 11:15:49.187
+2026-11-18T11:15:49+00:00 INFO #4038.REST - Attempting manual connection to PayPal... CONTEXT: {"sandbox":false,"client_id":"BAA3y8bfVofuMl3G2vFcJ-9EFosgI9W7VqFL_PFqvQat4fu2VHbrZzc1ZWooQKHL49Naiuv0eW-Yb5mDFY"}
+2026-11-18T11:15:49+00:00 DEBUG #4038.REST - POST https://api-m.paypal.com/v1/oauth2/token?grant_type=client_credentials
+Response Debug ID: dd23e563ad686
+Response: Array
+(
+    [code] => 200
+    [message] => OK
+)
+
+2026-11-18T11:15:50+00:00 DEBUG #4038.REST - POST https://api-m.paypal.com/v2/checkout/orders
+Request Body: {"intent":"CAPTURE","purchase_units":[{"amount":{"currency_code":"USD","value":1}}]}
+Response Debug ID: 9ef6c2aba70ee
+Response: Array
+(
+    [code] => 422
+    [message] => Unprocessable Entity
+)
+
+Response Body: {"name":"UNPROCESSABLE_ENTITY","details":[{"field":"/purchase_units/@reference_id=='default'/payee","location":"body","issue":"PAYEE_ACCOUNT_RESTRICTED","description":"The merchant account is restricted."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"9ef6c2aba70ee","links":[{"href":"https://developer.paypal.com/api/rest/reference/orders/v2/errors/#PAYEE_ACCOUNT_RESTRICTED","rel":"information_link","method":"GET"}]}
+2026-11-18T11:15:50+00:00 ERROR #4038.REST - Direct API authentication failed: Failed to retrieve payee details.
+2026-11-18T11:16:08+00:00 DEBUG #9697.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:16:08.006
+2026-11-18T11:16:08+00:00 DEBUG #9697.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:16:08+00:00 INFO #9697.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:16:08+00:00 DEBUG #3200.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:16:08.789
+2026-11-18T11:16:08+00:00 DEBUG #3200.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:16:08+00:00 INFO #3200.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:16:16+00:00 DEBUG #1670.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:16:16.446
+2026-11-18T11:16:16+00:00 DEBUG #1670.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:16:16+00:00 INFO #1670.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:16:17+00:00 DEBUG #4538.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:16:17.307
+2026-11-18T11:16:17+00:00 DEBUG #4538.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:16:17+00:00 INFO #4538.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:16:18+00:00 DEBUG #6260.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/authenticate/direct @ 11:16:18.728
+2026-11-18T11:16:18+00:00 INFO #6260.REST - Attempting manual connection to PayPal... CONTEXT: {"sandbox":false,"client_id":"BAA3y8bfVofuMl3G2vFcJ-9EFosgI9W7VqFL_PFqvQat4fu2VHbrZzc1ZWooQKHL49Naiuv0eW-Yb5mDFY"}
+2026-11-18T11:16:19+00:00 DEBUG #6260.REST - POST https://api-m.paypal.com/v1/oauth2/token?grant_type=client_credentials
+Response Debug ID: 8e0aadb22b9e6
+Response: Array
+(
+    [code] => 200
+    [message] => OK
+)
+
+2026-11-18T11:16:19+00:00 DEBUG #6260.REST - POST https://api-m.paypal.com/v2/checkout/orders
+Request Body: {"intent":"CAPTURE","purchase_units":[{"amount":{"currency_code":"USD","value":1}}]}
+Response Debug ID: 432624aeb60f4
+Response: Array
+(
+    [code] => 422
+    [message] => Unprocessable Entity
+)
+
+Response Body: {"name":"UNPROCESSABLE_ENTITY","details":[{"field":"/purchase_units/@reference_id=='default'/payee","location":"body","issue":"PAYEE_ACCOUNT_RESTRICTED","description":"The merchant account is restricted."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"432624aeb60f4","links":[{"href":"https://developer.paypal.com/api/rest/reference/orders/v2/errors/#PAYEE_ACCOUNT_RESTRICTED","rel":"information_link","method":"GET"}]}
+2026-11-18T11:16:19+00:00 ERROR #6260.REST - Direct API authentication failed: Failed to retrieve payee details.
+2026-11-18T11:16:41+00:00 DEBUG #7839.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:16:41.325
+2026-11-18T11:16:41+00:00 DEBUG #7839.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:16:41+00:00 INFO #7839.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:16:43+00:00 DEBUG #1886.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:16:43.640
+2026-11-18T11:16:43+00:00 DEBUG #1886.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:16:43+00:00 INFO #1886.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:16:44+00:00 DEBUG #1235.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:16:44.019
+2026-11-18T11:16:44+00:00 DEBUG #1235.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:16:44+00:00 INFO #1235.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:16:45+00:00 DEBUG #2382.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/authenticate/direct @ 11:16:45.491
+2026-11-18T11:16:45+00:00 INFO #2382.REST - Attempting manual connection to PayPal... CONTEXT: {"sandbox":false,"client_id":"BAA3y8bfVofuMl3G2vFcJ-9EFosgI9W7VqFL_PFqvQat4fu2VHbrZzc1ZWooQKHL49Naiuv0eW-Yb5mDFY"}
+2026-11-18T11:16:46+00:00 DEBUG #2382.REST - POST https://api-m.paypal.com/v1/oauth2/token?grant_type=client_credentials
+Response Debug ID: 09a5828c2e01d
+Response: Array
+(
+    [code] => 200
+    [message] => OK
+)
+
+2026-11-18T11:16:46+00:00 DEBUG #2382.REST - POST https://api-m.paypal.com/v2/checkout/orders
+Request Body: {"intent":"CAPTURE","purchase_units":[{"amount":{"currency_code":"USD","value":1}}]}
+Response Debug ID: 29c21ea38e2b3
+Response: Array
+(
+    [code] => 422
+    [message] => Unprocessable Entity
+)
+
+Response Body: {"name":"UNPROCESSABLE_ENTITY","details":[{"field":"/purchase_units/@reference_id=='default'/payee","location":"body","issue":"PAYEE_ACCOUNT_RESTRICTED","description":"The merchant account is restricted."}],"message":"The requested action could not be performed, semantically incorrect, or failed business validation.","debug_id":"29c21ea38e2b3","links":[{"href":"https://developer.paypal.com/api/rest/reference/orders/v2/errors/#PAYEE_ACCOUNT_RESTRICTED","rel":"information_link","method":"GET"}]}
+2026-11-18T11:16:46+00:00 ERROR #2382.REST - Direct API authentication failed: Failed to retrieve payee details.
+2026-11-18T11:22:57+00:00 DEBUG #9593.REST - [New Request] GET /wordpress/wp-json/wc/v3/wc_paypal/webhooks @ 11:22:57.009
+2026-11-18T11:22:57+00:00 DEBUG #9593.REST - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+2026-11-18T11:22:57+00:00 DEBUG #4632.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:22:57.919
+2026-11-18T11:22:57+00:00 DEBUG #4632.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:22:57+00:00 INFO #4632.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:22:59+00:00 DEBUG #8880.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:22:59.418
+2026-11-18T11:22:59+00:00 DEBUG #8880.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:22:59+00:00 INFO #8880.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:22:59+00:00 DEBUG #9695.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:22:59.410
+2026-11-18T11:22:59+00:00 DEBUG #9695.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:22:59+00:00 INFO #9695.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:23:04+00:00 DEBUG #2802.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:23:04.505
+2026-11-18T11:23:04+00:00 DEBUG #2802.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:23:04+00:00 INFO #2802.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:23:09+00:00 DEBUG #8687.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:23:09.422
+2026-11-18T11:23:09+00:00 DEBUG #8687.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:23:09+00:00 INFO #8687.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:23:09+00:00 DEBUG #4636.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:23:09.848
+2026-11-18T11:23:09+00:00 DEBUG #4636.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:23:09+00:00 INFO #4636.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:23:11+00:00 DEBUG #7620.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/authenticate/direct @ 11:23:11.120
+2026-11-18T11:23:11+00:00 INFO #7620.REST - Attempting manual connection to PayPal... CONTEXT: {"sandbox":false,"client_id":"AZf2UHaGjFnSVC86LhlbLvQdf_CKcHKHB6nHpGSs1WsuuPNEccFFcjptM64AL1v2FPDGqLYAgxEt8WCA"}
+2026-11-18T11:23:11+00:00 DEBUG #7620.REST - POST https://api-m.paypal.com/v1/oauth2/token?grant_type=client_credentials
+Response Debug ID: d9c325449f74d
+Response: Array
+(
+    [code] => 401
+    [message] => Unauthorized
+)
+
+Response Body: {"error":"invalid_client","error_description":"Client Authentication failed"}
+2026-11-18T11:23:11+00:00 WARNING #7620.REST - PayPal rejected the credentials for "bearer" (status 401). Pausing token requests for 1800 seconds; the merchant likely needs to reconnect. CONTEXT: {"scope":"bearer","status":401,"cooldown":1800}
+2026-11-18T11:23:11+00:00 WARNING #7620.REST - Could not create token. CONTEXT: {"args":{"method":"POST","headers":{"Authorization":"[REDACTED]"}},"response":{"headers":{},"body":"{\"error\":\"invalid_client\",\"error_description\":\"Client Authentication failed\"}","response":{"code":401,"message":"Unauthorized"},"cookies":[{"name":"l7_az","value":"ccg13.slc","expires":1795002791,"path":"/","domain":"paypal.com","port":null,"host_only":false},{"name":"__cf_bm","value":"JY5NeAawmScDhQqyAWwRhhosoGRuKNi8Kz7UGaxnUzI-1795000991.37892-1.0.1.1-VtN4qhVR3dB37zekUsOrNBDp_eEs2_IxgXo8QIYpMhWug3V41_sRMOLY1_CwWUs9vDg38FnWs3Jx6uG0N7oSUlyx0_AYX8GsAcfumKv9ToBgPqe0IN8JybBlclmYZJJ0","expires":1795002791,"path":"/","domain":"api-m.paypal.com","port":null,"host_only":false}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}}
+2026-11-18T11:23:11+00:00 ERROR #7620.REST - Direct API authentication failed: Failed to retrieve payee details.
+2026-11-18T11:23:12+00:00 DEBUG #4974.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/authenticate/direct @ 11:23:12.718
+2026-11-18T11:23:12+00:00 INFO #4974.REST - Attempting manual connection to PayPal... CONTEXT: {"sandbox":false,"client_id":"AZf2UHaGjFnSVC86LhlbLvQdf_CKcHKHB6nHpGSs1WsuuPNEccFFcjptM64AL1v2FPDGqLYAgxEt8WCA"}
+2026-11-18T11:23:12+00:00 ERROR #4974.REST - Direct API authentication failed: Failed to retrieve payee details.
+2026-11-18T11:23:14+00:00 DEBUG #4492.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:23:14.479
+2026-11-18T11:23:14+00:00 DEBUG #4492.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:23:14+00:00 INFO #4492.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:23:14+00:00 DEBUG #7272.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:23:14.484
+2026-11-18T11:23:14+00:00 DEBUG #7272.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:23:14+00:00 INFO #7272.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:23:32+00:00 DEBUG #2696.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:23:32.535
+2026-11-18T11:23:32+00:00 INFO #2696.REST - Generating onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:23:34+00:00 DEBUG #2696.REST - POST https://api.woocommerce.com/integrations/ppcsandbox/v2/customer/partner-referrals
+Request Body: {"partner_config_override":{"return_url":"http:\/\/localhost\/wordpress\/wp-admin\/admin.php?page=wc-settings&tab=checkout&section=ppcp-gateway&ppcpToken=eyJrIjoic2FuZGJveC1leHByZXNzX2NoZWNrb3V0LSIsInUiOjEsImgiOiIwZjgwOWJmNzMxYjllMjJlNjRkN2FjYTE5OGYyOTZmYiJ9","return_url_description":"Return to your shop.","show_add_credit_card":false},"products":["EXPRESS_CHECKOUT"],"legal_consents":[{"type":"SHARE_DATA_CONSENT","granted":true}],"operations":[{"operation":"API_INTEGRATION","api_integration_preference":{"rest_api_integration":{"integration_method":"PAYPAL","integration_type":"FIRST_PARTY","first_party_details":{"features":["PAYMENT","REFUND","ADVANCED_TRANSACTIONS_SEARCH","TRACKING_SHIPMENT_READWRITE","BILLING_AGREEMENT"],"seller_nonce":"dbb2d2cf085e55e0507af4f6d1315b01cfe188d7a2a6fdbeb59cf42d475e0a2a"}}}}]}
+Response Debug ID: b4b4640277b43
+Response: Array
+(
+    [code] => 201
+    [message] => Created
+)
+
+2026-11-18T11:23:35+00:00 DEBUG #1894.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:23:35.844
+2026-11-18T11:23:35+00:00 DEBUG #1894.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:23:35+00:00 INFO #1894.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:23:35+00:00 DEBUG #9559.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:23:35.861
+2026-11-18T11:23:35+00:00 DEBUG #9559.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:23:35+00:00 INFO #9559.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:23:35+00:00 DEBUG #1693.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:23:35.844
+2026-11-18T11:23:35+00:00 DEBUG #1693.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:23:35+00:00 INFO #1693.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:23:35+00:00 DEBUG #9726.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:23:35.874
+2026-11-18T11:23:35+00:00 DEBUG #9726.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:23:35+00:00 INFO #9726.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:24:09+00:00 DEBUG #1623.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/authenticate/oauth @ 11:24:09.145
+2026-11-18T11:24:09+00:00 DEBUG #2950.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/authenticate/oauth @ 11:24:09.148
+2026-11-18T11:24:09+00:00 INFO #2950.REST - Storing one-time OAuth credentials... CONTEXT: {"shared_id":"BAAcASHH5JnT3QDKgt7h0IS62-QzX_IXE8Io45p1BKHqLUWVHC1HARTd5o8PkbQziOx2VSnCtFdhzGuqfA","use_sandbox":true}
+2026-11-18T11:24:09+00:00 INFO #1623.REST - Storing one-time OAuth credentials... CONTEXT: {"shared_id":"BAAcASHH5JnT3QDKgt7h0IS62-QzX_IXE8Io45p1BKHqLUWVHC1HARTd5o8PkbQziOx2VSnCtFdhzGuqfA","use_sandbox":true}
+2026-11-18T11:26:10+00:00 DEBUG #6864.REST - [New Request] GET /wordpress/wp-json/wc/v3/wc_paypal/webhooks @ 11:26:09.845
+2026-11-18T11:26:10+00:00 DEBUG #6864.REST - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+2026-11-18T11:26:10+00:00 DEBUG #7131.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:10.830
+2026-11-18T11:26:10+00:00 DEBUG #7131.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:26:10+00:00 INFO #7131.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:26:10+00:00 DEBUG #6084.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:10.831
+2026-11-18T11:26:10+00:00 DEBUG #6084.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:26:10+00:00 INFO #6084.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:26:12+00:00 DEBUG #2916.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:12.518
+2026-11-18T11:26:12+00:00 DEBUG #8794.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:12.520
+2026-11-18T11:26:12+00:00 DEBUG #2916.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:26:12+00:00 DEBUG #8794.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:26:12+00:00 INFO #2916.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:26:12+00:00 INFO #8794.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:26:12+00:00 DEBUG #8569.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:12.531
+2026-11-18T11:26:12+00:00 DEBUG #8569.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:26:12+00:00 INFO #8569.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:26:12+00:00 DEBUG #2354.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:12.530
+2026-11-18T11:26:12+00:00 DEBUG #2354.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:26:12+00:00 INFO #2354.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:26:13+00:00 DEBUG #3027.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:13.772
+2026-11-18T11:26:13+00:00 DEBUG #3027.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:26:13+00:00 INFO #3027.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:26:13+00:00 DEBUG #6364.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:13.786
+2026-11-18T11:26:13+00:00 DEBUG #6364.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:26:13+00:00 INFO #6364.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:26:13+00:00 DEBUG #8728.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:13.791
+2026-11-18T11:26:13+00:00 DEBUG #9447.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:13.790
+2026-11-18T11:26:13+00:00 DEBUG #8728.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:26:13+00:00 DEBUG #9447.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:26:13+00:00 INFO #8728.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:26:13+00:00 INFO #9447.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:26:28+00:00 DEBUG #3616.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/authenticate/oauth @ 11:26:28.184
+2026-11-18T11:26:28+00:00 INFO #3616.REST - Storing one-time OAuth credentials... CONTEXT: {"shared_id":"BAAFq18DvXGKwh7FXvmLXlmQnUjCabTql7Ix2sjf90pVBaPwWj5IxbB6_zPoKS3wcfIhrG3x17BUpq4Jyg","use_sandbox":true}
+2026-11-18T11:26:55+00:00 DEBUG #6921.REST - [New Request] GET /wordpress/wp-json/wc/v3/wc_paypal/webhooks @ 11:26:54.183
+2026-11-18T11:26:55+00:00 DEBUG #6921.REST - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+2026-11-18T11:26:55+00:00 DEBUG #9771.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:55.129
+2026-11-18T11:26:55+00:00 DEBUG #9771.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:26:55+00:00 INFO #9771.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:26:55+00:00 DEBUG #8668.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:55.128
+2026-11-18T11:26:55+00:00 DEBUG #8668.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:26:55+00:00 INFO #8668.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:26:56+00:00 DEBUG #8990.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:56.845
+2026-11-18T11:26:56+00:00 DEBUG #8990.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:26:56+00:00 INFO #8990.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:26:56+00:00 DEBUG #2460.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:56.842
+2026-11-18T11:26:56+00:00 DEBUG #2460.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:26:56+00:00 INFO #2460.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:26:56+00:00 DEBUG #4931.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:56.856
+2026-11-18T11:26:56+00:00 DEBUG #4931.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:26:56+00:00 DEBUG #9282.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:26:56.855
+2026-11-18T11:26:56+00:00 INFO #4931.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:26:56+00:00 DEBUG #9282.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:26:56+00:00 INFO #9282.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:27:16+00:00 DEBUG #9361.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:27:16.544
+2026-11-18T11:27:16+00:00 DEBUG #5884.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:27:16.544
+2026-11-18T11:27:16+00:00 DEBUG #9361.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:27:16+00:00 DEBUG #5884.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:27:16+00:00 INFO #9361.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:27:16+00:00 INFO #5884.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:27:16+00:00 DEBUG #3721.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:27:16.875
+2026-11-18T11:27:16+00:00 DEBUG #8568.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:27:16.876
+2026-11-18T11:27:16+00:00 DEBUG #3721.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:27:16+00:00 DEBUG #8568.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:27:16+00:00 INFO #8568.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:27:16+00:00 INFO #3721.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:27:23+00:00 DEBUG #1732.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:27:23.320
+2026-11-18T11:27:23+00:00 DEBUG #1732.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:27:23+00:00 INFO #1732.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:27:23+00:00 DEBUG #4761.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:27:23.321
+2026-11-18T11:27:23+00:00 DEBUG #4761.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:27:23+00:00 INFO #4761.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:27:23+00:00 DEBUG #6893.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:27:23.668
+2026-11-18T11:27:23+00:00 DEBUG #6893.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:27:23+00:00 INFO #6893.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:27:23+00:00 DEBUG #4141.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:27:23.667
+2026-11-18T11:27:23+00:00 DEBUG #4141.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:27:23+00:00 INFO #4141.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:27:24+00:00 DEBUG #7577.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/authenticate/direct @ 11:27:24.546
+2026-11-18T11:27:24+00:00 INFO #7577.REST - Attempting manual connection to PayPal... CONTEXT: {"sandbox":true,"client_id":"AZf2UHaGjFnSVC86LhlbLvQdf_CKcHKHB6nHpGSs1WsuuPNEccFFcjptM64AL1v2FPDGqLYAgxEt8WCA"}
+2026-11-18T11:27:24+00:00 ERROR #7577.REST - Direct API authentication failed: Failed to retrieve payee details.
+2026-11-18T11:28:44+00:00 DEBUG #6743.REST - [New Request] GET /wordpress/wp-json/wc/v3/wc_paypal/webhooks @ 11:28:43.903
+2026-11-18T11:28:44+00:00 DEBUG #6743.REST - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+2026-11-18T11:28:44+00:00 DEBUG #8707.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:28:44.841
+2026-11-18T11:28:44+00:00 DEBUG #8707.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:28:44+00:00 INFO #8707.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:28:44+00:00 DEBUG #1917.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:28:44.840
+2026-11-18T11:28:44+00:00 DEBUG #1917.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:28:44+00:00 INFO #1917.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:28:46+00:00 DEBUG #7633.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:28:46.803
+2026-11-18T11:28:46+00:00 DEBUG #8562.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:28:46.801
+2026-11-18T11:28:46+00:00 DEBUG #7633.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:28:46+00:00 DEBUG #8562.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:28:46+00:00 INFO #7633.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:28:46+00:00 INFO #8562.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:28:46+00:00 DEBUG #4307.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:28:46.815
+2026-11-18T11:28:46+00:00 DEBUG #4307.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:28:46+00:00 INFO #4307.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:28:46+00:00 DEBUG #1514.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:28:46.814
+2026-11-18T11:28:46+00:00 DEBUG #1514.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:28:46+00:00 INFO #1514.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:28:57+00:00 DEBUG #9014.REST - [New Request] GET /wordpress/wp-json/wc/v3/wc_paypal/webhooks @ 11:28:56.525
+2026-11-18T11:28:57+00:00 DEBUG #9014.REST - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Response: Array
+(
+    [code] => 404
+    [message] => Not Found
+)
+
+Response Body: {"statusCode":404,"error":"Not Found","message":"Not Found"}
+2026-11-18T11:28:57+00:00 DEBUG #1895.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:28:57.688
+2026-11-18T11:28:57+00:00 DEBUG #1895.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:28:57+00:00 INFO #1895.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:28:57+00:00 DEBUG #6747.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:28:57.687
+2026-11-18T11:28:57+00:00 DEBUG #6747.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:28:57+00:00 INFO #6747.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:28:58+00:00 DEBUG #5879.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:28:58.696
+2026-11-18T11:28:58+00:00 DEBUG #5879.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:28:58+00:00 INFO #5879.REST - Using cached onboarding URL for: production-express_checkout-
+2026-11-18T11:28:58+00:00 DEBUG #3823.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:28:58.696
+2026-11-18T11:28:58+00:00 DEBUG #3823.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:28:58+00:00 INFO #3823.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:28:58+00:00 DEBUG #8505.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:28:58.705
+2026-11-18T11:28:58+00:00 DEBUG #8505.REST - Loaded onboarding URL from cache: sandbox-express_checkout-
+2026-11-18T11:28:58+00:00 INFO #8505.REST - Using cached onboarding URL for: sandbox-express_checkout-
+2026-11-18T11:28:58+00:00 DEBUG #6500.REST - [New Request] POST /wordpress/wp-json/wc/v3/wc_paypal/login_link @ 11:28:58.705
+2026-11-18T11:28:58+00:00 DEBUG #6500.REST - Loaded onboarding URL from cache: production-express_checkout-
+2026-11-18T11:28:58+00:00 INFO #6500.REST - Using cached onboarding URL for: production-express_checkout-

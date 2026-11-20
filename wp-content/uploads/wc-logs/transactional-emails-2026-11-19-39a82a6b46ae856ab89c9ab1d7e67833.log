@@ -1,0 +1,1 @@
+2026-11-19T12:52:09+00:00 WARNING Email "cancelled_order" for order #693 failed to send: Could not instantiate mail function. CONTEXT: {"email_type":"cancelled_order","status":"failed","recipient":"dharm","order":693}

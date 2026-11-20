@@ -4,12 +4,14 @@
  *
  * @return void
  */
-function northstar_single_product_rating() {
+function northstar_single_product_rating($product) {
 
-    global $product;
+    if (!$product instanceof WC_Product) {
+        global $product;
 
-    if ( ! $product instanceof WC_Product ) {
-        return;
+        if (!$product instanceof WC_Product) {
+            return;
+        }
     }
 
     $average_rating = (float) $product->get_average_rating();

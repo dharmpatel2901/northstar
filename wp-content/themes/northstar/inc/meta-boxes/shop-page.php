@@ -1,77 +1,95 @@
 
 <?php
 /**
- * WooCommerce Shop Page Meta Boxes.
+ * WooCommerce Shop and Cart Page Meta Boxes.
  *
  * @package Northstar
  */
 
 defined( 'ABSPATH' ) || exit;
 
+
 /**
- * Register shop page meta boxes.
- *
- * @return void
+ * Register meta box only for WooCommerce Shop and Cart pages.
  */
-function northstar_add_shop_page_meta_boxes() {
-
+function northstar_add_woocommerce_page_meta_boxes( $post ) {
     $shop_page_id = (int) get_option( 'woocommerce_shop_page_id' );
+    $cart_page_id = (int) get_option( 'woocommerce_cart_page_id' );
 
-    if ( ! $shop_page_id ) {
+    if (
+        (int) $post->ID !== $shop_page_id &&
+        (int) $post->ID !== $cart_page_id
+    ) {
         return;
     }
 
     add_meta_box(
-        'northstar-shop-page-content',
-        __( 'Shop Page Content', 'northstar' ),
-        'northstar_render_shop_page_meta_box',
+        'northstar-woocommerce-page-content',
+        __( 'Page Content', 'northstar' ),
+        'northstar_render_woocommerce_page_meta_box',
         'page',
         'normal',
         'high'
     );
 }
-add_action( 'add_meta_boxes_page', 'northstar_add_shop_page_meta_boxes' );
+add_action( 'add_meta_boxes_page', 'northstar_add_woocommerce_page_meta_boxes' );
 
 /**
- * Render shop page meta box fields.
- *
- * @param WP_Post $post Current post object.
- * @return void
+ * Render WooCommerce page meta box.
  */
-function northstar_render_shop_page_meta_box( $post ) {
+function northstar_render_woocommerce_page_meta_box( $post ) {
+    $shop_page_id = (int) get_option( 'woocommerce_shop_page_id' );
+    $cart_page_id = (int) get_option( 'woocommerce_cart_page_id' );
+
+    if ( (int) $post->ID === $shop_page_id ) {
+        $page_type = 'shop';
+    } elseif ( (int) $post->ID === $cart_page_id ) {
+        $page_type = 'cart';
+    } else {
+        return;
+    }
 
     wp_nonce_field(
-        'northstar_save_shop_page_meta',
-        'northstar_shop_page_meta_nonce'
+        'northstar_save_woocommerce_page_meta',
+        'northstar_woocommerce_page_meta_nonce'
     );
 
-    $eyebrow = get_post_meta( $post->ID, '_northstar_shop_eyebrow', true );
-    $lead    = get_post_meta( $post->ID, '_northstar_shop_lead', true );
+    $eyebrow = get_post_meta(
+        $post->ID,
+        '_northstar_' . $page_type . '_eyebrow',
+        true
+    );
+
+    $lead = get_post_meta(
+        $post->ID,
+        '_northstar_' . $page_type . '_lead',
+        true
+    );
     ?>
 
     <p>
-        <label for="northstar-shop-eyebrow">
+        <label for="northstar_<?php echo esc_attr( $page_type ); ?>_eyebrow">
             <strong><?php esc_html_e( 'Eyebrow', 'northstar' ); ?></strong>
         </label>
     </p>
 
     <input
         type="text"
-        id="northstar-shop-eyebrow"
-        name="northstar_shop_eyebrow"
+        id="northstar_<?php echo esc_attr( $page_type ); ?>_eyebrow"
+        name="northstar_<?php echo esc_attr( $page_type ); ?>_eyebrow"
         value="<?php echo esc_attr( $eyebrow ); ?>"
         class="widefat"
-    />
+    >
 
     <p>
-        <label for="northstar-shop-lead">
+        <label for="northstar_<?php echo esc_attr( $page_type ); ?>_lead">
             <strong><?php esc_html_e( 'Lead', 'northstar' ); ?></strong>
         </label>
     </p>
 
     <textarea
-        id="northstar-shop-lead"
-        name="northstar_shop_lead"
+        id="northstar_<?php echo esc_attr( $page_type ); ?>_lead"
+        name="northstar_<?php echo esc_attr( $page_type ); ?>_lead"
         rows="4"
         class="widefat"
     ><?php echo esc_textarea( $lead ); ?></textarea>
@@ -80,25 +98,19 @@ function northstar_render_shop_page_meta_box( $post ) {
 }
 
 /**
- * Save shop page meta box values.
- *
- * @param int $post_id Current post ID.
- * @return void
+ * Save WooCommerce page meta box data.
  */
-function northstar_save_shop_page_meta( $post_id ) {
-
-    // Verify nonce.
+function northstar_save_woocommerce_page_meta( $post_id ) {
     if (
-        ! isset( $_POST['northstar_shop_page_meta_nonce'] ) ||
+        ! isset( $_POST['northstar_woocommerce_page_meta_nonce'] ) ||
         ! wp_verify_nonce(
-            sanitize_text_field( wp_unslash( $_POST['northstar_shop_page_meta_nonce'] ) ),
-            'northstar_save_shop_page_meta'
+            sanitize_text_field( wp_unslash( $_POST['northstar_woocommerce_page_meta_nonce'] ) ),
+            'northstar_save_woocommerce_page_meta'
         )
     ) {
         return;
     }
 
-    // Prevent autosave and revisions.
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
         return;
     }
@@ -107,42 +119,42 @@ function northstar_save_shop_page_meta( $post_id ) {
         return;
     }
 
-    // Verify post type.
     if ( 'page' !== get_post_type( $post_id ) ) {
         return;
     }
 
-    // Verify permissions.
     if ( ! current_user_can( 'edit_page', $post_id ) ) {
         return;
     }
 
-    // Save eyebrow.
-    if ( isset( $_POST['northstar_shop_eyebrow'] ) ) {
+    $shop_page_id = (int) get_option( 'woocommerce_shop_page_id' );
+    $cart_page_id = (int) get_option( 'woocommerce_cart_page_id' );
 
-        $eyebrow = sanitize_text_field(
-            wp_unslash( $_POST['northstar_shop_eyebrow'] )
-        );
+    if ( (int) $post_id === $shop_page_id ) {
+        $page_type = 'shop';
+    } elseif ( (int) $post_id === $cart_page_id ) {
+        $page_type = 'cart';
+    } else {
+        return;
+    }
 
+    $eyebrow_key = 'northstar_' . $page_type . '_eyebrow';
+    $lead_key    = 'northstar_' . $page_type . '_lead';
+
+    if ( isset( $_POST[ $eyebrow_key ] ) ) {
         update_post_meta(
             $post_id,
-            '_northstar_shop_eyebrow',
-            $eyebrow
+            '_northstar_' . $page_type . '_eyebrow',
+            sanitize_text_field( wp_unslash( $_POST[ $eyebrow_key ] ) )
         );
     }
 
-    // Save lead.
-    if ( isset( $_POST['northstar_shop_lead'] ) ) {
-
-        $lead = sanitize_textarea_field(
-            wp_unslash( $_POST['northstar_shop_lead'] )
-        );
-
+    if ( isset( $_POST[ $lead_key ] ) ) {
         update_post_meta(
             $post_id,
-            '_northstar_shop_lead',
-            $lead
+            '_northstar_' . $page_type . '_lead',
+            sanitize_textarea_field( wp_unslash( $_POST[ $lead_key ] ) )
         );
     }
 }
-add_action( 'save_post_page', 'northstar_save_shop_page_meta' );
+add_action( 'save_post_page', 'northstar_save_woocommerce_page_meta' );
